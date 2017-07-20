@@ -1,5 +1,26 @@
-{%extend"layout.html"%}
-{%block body%}
-<p>my phone number</p>
+{%extends "layout.html"%}
+{%block head%}
+<link rel="stylesheet" type="text/css" href="../static/stylesheets/stylecontact.css">
+
+
 {%endblock%}
 
+{%block body%}
+<form action="{{ url_for('hello') }}" method="post">
+<p>my phone number</p>
+<form>
+	First name:<br>
+	<input type="text" name="firstname"><br>
+	Last name:<br>
+	<input type="text" name="lastname"><br>
+	Messege:<br>
+	<textarea class="messege" type="text"  name="messege" ></textarea>
+
+	<input type="radio" name="gender" value="male">Male
+	<input type="radio" name="gender" value="female">female
+	<input type="radio" name="gender" value="other">other
+	<input type="submit" value="submit">
+
+
+</form>	
+{%endblock%}
